@@ -77,3 +77,4 @@
 /Users/adriano_grevizirsky/Documents/Programing/BlazingShop/obj/Debug/net9.0/BlazingShop.pdb
 /Users/adriano_grevizirsky/Documents/Programing/BlazingShop/obj/Debug/net9.0/BlazingShop.genruntimeconfig.cache
 /Users/adriano_grevizirsky/Documents/Programing/BlazingShop/obj/Debug/net9.0/ref/BlazingShop.dll
+/Users/adriano_grevizirsky/Documents/Programing/BlazingShop/obj/Debug/net9.0/BlazingShop.sourcelink.json
