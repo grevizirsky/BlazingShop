@@ -8,6 +8,9 @@
 
 <EditForm Model=_model OnValidSubmit="@HandleSubmitAsync">
     
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
     <div class="mb-3">
         <label for="Title" class="form-label">Title</label>
         <InputText class="form-control" type="text" id="Title" @bind-Value="_model.Title"/>
@@ -20,7 +23,7 @@
 
     <div class="mb-3">
         <label for="CategoryId" class="form-label">Category</label>
-        <InputSelect id="CategoryId" class="form-control" @bind-Value="_model.CategoryId">    
+        <InputSelect id="CategoryId" class="form-control" @bind-Value="_model.CategoryId">
             @foreach (var category in _categories)
             {
                 <option value="@category.Id">
@@ -29,6 +32,8 @@
             }
         </InputSelect>
     </div>
+
+    <button class="btn btn-success" type="submit">SAVE</button>
 
 </EditForm>
 
