@@ -10,6 +10,7 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddServerSideBlazor();
 
+
 var cnnStr = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(cnnStr));
 
