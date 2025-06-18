@@ -6,7 +6,7 @@
 
 <h1>New Product</h1>
 
-<EditForm Model=_model OnValidSubmit="@HandleSubmitAsync">
+<EditForm Model=_model OnValidSubmit="@HandleSubmitAsync" FormName="CreateProductForm">
     
     <DataAnnotationsValidator />
     <ValidationSummary />
@@ -32,6 +32,13 @@
             }
         </InputSelect>
     </div>
+    
+    @if (!string.IsNullOrEmpty(_errorMessage))
+    {
+        <div class="alert alert-danger" role="alert">
+            @_errorMessage
+        </div>
+    }
 
     <button class="btn btn-success" type="submit">SAVE</button>
 
@@ -41,6 +48,7 @@
 {
     private Product _model = new();
     private List<Category> _categories = new();
+    String? _errorMessage = null;
 
     protected override async Task OnInitializedAsync()
     {
@@ -49,11 +57,12 @@
             .AsNoTracking()
             .OrderBy(x => x.Title)
             .ToListAsync();
+        _model.CategoryId = _categories[0].Id;
     }
 
     async Task HandleSubmitAsync()
     {
-        
+        _errorMessage = "Falha ao persisir os dados";
     }
 }
 
